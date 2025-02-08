@@ -1,0 +1,256 @@
+/* Start CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: inherit;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+html {
+  text-size-adjust: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* End CSS Reset */
+
+/* Start Global Styles */
+
+:root {
+  --button-text-color: #4036a9;
+  --form-bg-color: #ffffff33;
+  --fields-text-color: #111729;
+  --light-gray: #cdd5e0;
+
+  --heading-font-size: 2rem;
+  --heading-font-size-two: 3rem;
+  --body-font-size: 1rem;
+  --label-font-size: 0.875rem;
+  --button-font-size: 1.25rem;
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background-image: url("./resources/background@2x.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.logo-container {
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+header {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: clamp(var(--heading-font-size), 5vw, var(--heading-font-size-two));
+  line-height: 1.3;
+  text-wrap: wrap;
+}
+
+.details {
+  font-size: clamp(0.9rem, 2vw, 2rem);
+  text-wrap: wrap;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  padding-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--form-bg-color);
+  box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.15);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: var(--label-font-size);
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+}
+
+input {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.8rem;
+  color: var(--fields-text-color);
+  font-weight: 500;
+}
+
+input:focus {
+  outline: none;
+}
+
+select {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.8rem;
+  color: var(--fields-text-color);
+  font-weight: 500;
+  appearance: none;
+  background: url("./resources/Expand_down.svg") no-repeat right 1rem center;
+  background-size: 1.2rem;
+  background-color: #ffffff;
+}
+
+select:focus {
+  outline: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  padding: 1.5rem;
+  margin-bottom: 0.6rem;
+  border: none;
+  border-radius: 0.8rem;
+  color: var(--fields-text-color);
+  font-weight: 500;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+button {
+  padding: 1.2rem 1rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.8rem;
+  background-color: #ffffff;
+  color: var(--button-text-color);
+  font-size: var(--button-font-size);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (min-width: 64rem) {
+  .logo-container {
+    margin-left: 3rem;
+  }
+
+  form {
+    padding: 2rem;
+  }
+
+  .form-group {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .input-container {
+    flex: 1 1 calc(50% - 1rem); /* Two inputs per row, adjust for gap */
+  }
+
+  input {
+    flex-grow: 1;
+  }
+}
